@@ -56,3 +56,60 @@ body {
 .info {
     margin-left: 0.5rem;
 }
+
+/* login page css */
+.custom-body{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+}
+.card-container {
+    margin-top: 4rem;
+}
+
+.cust-card-header {
+    background-color: #1c1c20;
+    color: white;
+    padding: 2rem;
+    word-spacing: 2px;
+    font-size: 25px;
+}
+
+.all-card {
+    border: 3px solid #1c1c20;
+}
+
+
+#emailHelp {
+    color: white;
+    font-size: 16px;
+}
+
+.custom-control {
+    border: solid 3px #1c1c20;
+}
+
+.custom-form {
+    border: solid 3px #1c1c20;   
+}
+
+.custom-btn {
+    width: 100%;
+    background-color: #1c1c20;
+    color: white;
+}
+.custom-form-email {
+    color: #1c1c20;
+    font-size: 1.5rem;
+}
+
+.custom-pw {
+    color: #1c1c20;
+    font-size: 1.5rem;
+}
+
+.custom-form-usrn {
+    color: #1c1c20;
+    font-size: 1.5rem;
+}
+
