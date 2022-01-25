@@ -19,7 +19,12 @@
                 <div class="container-fluid justify-content-center">
                   <span class="navbar-brand mb-0 h1 text-white custom-nav">Home</span>
                   <span class="navbar-brand mb-0 h1 text-white custom-nav">Dashboard</span>
-                  <span class="navbar-brand mb-0 h1 text-white custom-nav">Login</span>
+                  <span class="navbar-brand mb-0 h1 text-white custom-nav"><a href='/'>Login</a>
+                {{#if loggedIn}}
+                    <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                <a href="/login">Login</a>
+            </span>
                 </div>
               </nav>
           </div>
