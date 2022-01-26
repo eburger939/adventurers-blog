@@ -65,6 +65,7 @@ body {
 }
 .card-container {
     margin-top: 4rem;
+    justify-content: center;
 }
 
 .cust-card-header {
@@ -113,3 +114,11 @@ body {
     font-size: 1.5rem;
 }
 
+.register {
+    color: white;
+    justify-content: end;
+
+}
+a {
+    text-decoration: none;
+}
