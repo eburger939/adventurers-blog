@@ -1,23 +1,25 @@
-const loginAction = async (event) => {
+const loginEvent = async (event) => {
     event.preventDefault();
-  
-    const email = document.querySelector('#exampleInputEmail1').value.trim();
-    const password = document.querySelector('#exampleInputPassword').value.trim();
-  
-    if (email && password) {
-      const response = await fetch('/api/users/login', {
+
+    const user_name = document.querySelector('#user_name').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#pw-signup').value.trim();
+    
+
+    if (user_name && email && password) {
+      const response = await fetch('/api/users/register', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ user_name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to log in');
+        alert('Failed to sign up.');
       }
     }
   };
   
-  document.querySelector('.login-form').addEventListener('submit', loginAction);
   
+  document.querySelector('.signup-form').addEventListener('submit', loginEvent);
