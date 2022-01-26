@@ -1,9 +1,13 @@
+{{#each entries as |entry|}}
+
 <div class="card custom-card">
 <div class="card-headers custom-header">
-    <div class="title"><strong>Example Title</strong></div>
-    <div class="posted">Posted by: </div>
+    <div class="title"><strong>{{entry.title}}</strong></div>
+    <div class="posted">Posted by: {{user.user_name}}</div>
 </div>
 <div class="card-body custom-body">
-    <div class="info">Blog written information</div>
+    <div class="info">{{entry.text}}</div>
 </div>
 </div>
+
+{{/each}}
