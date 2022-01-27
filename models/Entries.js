@@ -21,19 +21,18 @@ Entries.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    users_id: {
-      type: DataTypes.INTEGER,
+    date_created: {
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
       references: {
-          model: 'users',
+          model: 'user',
           key: 'id'
       }
     },
-    createdAt: Sequelize.DATE
-    // updateAt: {
-    //     type: DataTypes.DATE,
-    //     allowNull: false,
-    // }
   },
   {
     sequelize,

@@ -27,5 +27,9 @@ router.get('/register', (req, res) => {
     res.render('register')
 })
 
+router.get('/dash', withAuth, (req, res) => {
+    res.render('dash')
+})
+
 
 module.exports = router
