@@ -14,16 +14,34 @@ router.post('/', async (req, res) => {
 }
 })
 
-router.put('/', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const updateEntry = await Entries.update({
+            ...req.body,
+            user_id: req.session.user_id,
+        },
+        {
+        where: {
+            id: req.params.id,
+            user_id: req.session.user_id,
+        }
+        });
+        if(!updateEntry) {
+            res.status(404).json({ message: 'No entry found'})
+            return;
+        }
+        res.status(200).json(updateEntry);
+    } catch(err) {
+        res.status(500).json(err)
+    }
+});
 
-})
-
-router.delete('/:id', withAuth, async (req, res) =>{
+router.delete('/:id', async (req, res) =>{
     try {
         const oldEntry = await Entries.destroy({
             where: {
                 id: req.params.id,
-                users_id: req.session.user_id,
+                user_id: req.session.user_id,
             }
         });
         if (!oldEntry) {

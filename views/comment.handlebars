@@ -1,0 +1,19 @@
+    <div class="card custom-card">
+       <a href="/comment" class="card-button"><div class="card-headers custom-header">
+            <div class="title"><strong>{{entry.title}}</strong></div>
+            <div class="posted">Posted by: {{user.user_name}}</div>
+        </div>
+        <div class="card-body custom-body">
+            <div class="info">{{entry.text}}</div>
+        </div></a> 
+        </div>
+    <div class="card custom-card">
+          <form class="row g-3">
+<div class="comment-section">
+  <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Leave a comment:</strong></label>
+  <textarea class="form-control" id="comment-text" rows="3"></textarea>
+</div>
+    <button type="submit" class="btn button-custom"><strong>Submit</strong></button>
+
+</form>
+    </div>

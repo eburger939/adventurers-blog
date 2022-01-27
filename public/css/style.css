@@ -62,6 +62,7 @@ body {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 
+
 }
 .card-container {
     margin-top: 4rem;
@@ -121,4 +122,23 @@ body {
 }
 a {
     text-decoration: none;
+}
+
+.comment-section {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.comm-label {
+    margin-left: 5px;
+}
+
+.card-button {
+    border-bottom: black solid 2px;
+}
+
+.button-custom {
+    color: white;
+    background: #1c1c20;
+    width: 100%;
 }
