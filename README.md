@@ -16,4 +16,4 @@
 * 
 
 ## Link to repository
-* https://github.com/eburger939/be-Ecommerce
+* https://github.com/eburger939/tech-blog
