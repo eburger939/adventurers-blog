@@ -1,5 +1,6 @@
 const signupEvent = async (event) => {
     event.preventDefault();
+    console.log('hello')
 
     const user_name = document.querySelector('#user_name').value.trim();
     const email = document.querySelector('#email-signup').value.trim();

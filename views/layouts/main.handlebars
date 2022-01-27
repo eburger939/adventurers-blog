@@ -13,8 +13,12 @@
             <nav class="navbar navbar-light custom-nav">
                 <div class="container-fluid justify-content-center">
                   <a href="/"><span class="navbar-brand mb-0 h1 text-white custom-nav">Home</span></a>
-                  <a href="/login"><span class="navbar-brand mb-0 h1 text-white custom-nav">Dashboard</span></a>
+                  <a href="/"><span class="navbar-brand mb-0 h1 text-white custom-nav">Dashboard</span></a>
+                  {{#if loggedIn}}
+                  <button id="logout" class="btn-no-style">Logout</button>
+                  {{else}}
                   <a href='/login'><span class="navbar-brand mb-0 h1 text-white custom-nav">Login</span></a>
+                  {{/if}}
                 </div>
               </nav>
           </div>
@@ -23,7 +27,9 @@
    
 
     
-    
+      {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

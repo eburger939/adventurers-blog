@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 
 class Entries extends Model {}
@@ -29,6 +29,11 @@ Entries.init(
           key: 'id'
       }
     },
+    createdAt: Sequelize.DATE
+    // updateAt: {
+    //     type: DataTypes.DATE,
+    //     allowNull: false,
+    // }
   },
   {
     sequelize,
