@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         entry.get({ plain: true }) 
     );
     // res.json(entries)
-    res.render('homepage', {entries})
+    res.render('homepage', {entries, loggedIn: req.session.loggedIn})
     console.log(entries)
 });
 
