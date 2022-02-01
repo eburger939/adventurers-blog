@@ -48,6 +48,25 @@ body {
     color: rgb(167, 167, 224);
 }
 
+.custom-header2 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #1c1c20 2px;
+    padding: 5px;
+    background-color: #1c1c20;
+    color: rgb(167, 167, 224);
+    /* font-size: 10px; */
+}
+
+.title2 {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.info2 {
+    margin-left: 10px;
+}
+
 .posted {
     margin-right: 0rem;
 }
@@ -150,4 +169,8 @@ a {
 
 #logout {
     border: none;
+}
+
+.custom-body2 {
+    background-color: lightgray;
 }

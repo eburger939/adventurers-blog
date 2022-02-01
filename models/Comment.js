@@ -13,10 +13,6 @@ Comment.init(
       primaryKey: true,
      
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,10 +22,10 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    entry_id: {
       type: DataTypes.INTEGER,
       references: {
-          model: 'user',
+          model: 'entries',
           key: 'id'
       }
     },

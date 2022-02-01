@@ -2,10 +2,6 @@ const router = require('express').Router();
 const { Entries, Users } = require('../../models')
 // const withAuth = require('../../utils/auth')
 
-
-
-
-
 router.get('/:id', async (req, res) => {
   try {
    const entryData = await Entries.findOne({
@@ -26,6 +22,11 @@ router.get('/:id', async (req, res) => {
    } catch (err) {
      res.status(500).json(err);
    }
+ })
+
+
+ router.post('/', async (req, res) => {
+   
  })
 
 module.exports =  router;

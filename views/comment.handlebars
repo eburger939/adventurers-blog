@@ -13,13 +13,14 @@
     <div class="card-body custom-body">
         <div class="info">
 
-    <form class="row g-3">
+
+    <form class="row g-3 comm-label" data-id="{{entry.id}}">
         <div class="comment-section">
-            <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Leave a
+            <label for="exampleFormControlTextarea1" class="form-label"><strong>Leave a
                     comment:</strong></label>
             <textarea class="form-control" id="comment-text" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn button-custom"><strong>Submit</strong></button>
+        <button class="btn button-custom"><strong>Submit</strong></button>
 
     </form>
 
@@ -27,6 +28,8 @@
         </div>
     </div>
 </div>
+
+ <script src="/js/leaveComment.js"></script>
 
 
 

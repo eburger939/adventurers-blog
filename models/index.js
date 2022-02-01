@@ -13,12 +13,12 @@ Entries.belongsTo(Users, {
 
 Entries.hasMany(Comment,
     {
-        foreignKey: 'user_id',
+        foreignKey: 'entry_id',
         onDelete: 'cascade'
     });
 
-Comment.belongsTo(Users, {
-    foreignKey: 'user_id'
+Comment.belongsTo(Entries, {
+    foreignKey: 'entry_id'
 })
 
 module.exports = { Users, Entries, Comment }

@@ -21,6 +21,15 @@
     <div class="card-body custom-body">
         <div class="info">{{entry.text}}</div>
     </div>
+    {{#if comment}}
+    {{#each }}
+    <div class="card-headers custom-header2">
+        <div class="title2"><strong>Comments:</strong></div>
+        <div class="posted">Posted by: {{user.user_name}}</div>
+    </div>
+    <div class="card-body custom-body2">
+        <div class="info2">{{entry.text}}</div>
+    </div>
 </div>
 <br>
 <div class="card custom-card">
