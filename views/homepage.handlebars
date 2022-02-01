@@ -1,13 +1,15 @@
 {{#each entries as |entry|}}
 
-    <div class="card custom-card">
-       <a href="/entry"><div class="card-headers custom-header">
+    <div class="card custom-card" id={{entry.id}}>
+       <div class="card-headers custom-header">
             <div class="title"><strong>{{entry.title}}</strong></div>
             <div class="posted">Posted by: {{user.user_name}}</div>
         </div>
         <div class="card-body custom-body">
             <div class="info">{{entry.text}}</div>
         </div>
-        </div></a> 
+        </div>
 
 {{/each}}
+
+ <script src="./js/oneBlog.js"></script>

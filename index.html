@@ -13,46 +13,35 @@
 
 <body>
 
-    <div class="pt-4 mb-4 custom-jumbo rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold text-white text-center header-text">TECH BLOG</h1>
-        </div>
-        <nav class="navbar navbar-light custom-nav">
-            <div class="container-fluid justify-content-center">
-              <a href="/"><span class="navbar-brand mb-0 h1 text-white custom-nav">Home</span></a>
-              <a href="/dash"><span class="navbar-brand mb-0 h1 text-white custom-nav">Dashboard</span></a>
-              <a href='/login'><span class="navbar-brand mb-0 h1 text-white custom-nav">Login</span></a>
-            </div>
-          </nav>
-      </div>
-
-    <div class="card custom-card">
-           <div class="card-headers custom-header justify-content-center">
-            <div class="title"><strong>New Entry</strong></div>
-        </div>
-        <div class="card-body custom-body">
-
-
-<form class="row g-3">
-<div class="comment-section">
-  <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Title</strong></label>
-  <textarea class="form-control" id="comment-text" rows="1"></textarea>
-</div>
-<div class="comment-section">
-    <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Content</strong></label>
-    <textarea class="form-control" id="comment-text" rows="3"></textarea>
-  </div>
-
-    <button type="submit" class="btn button-custom"><strong>Submit</strong></button>
-
-</form>
-
-        </div>
-        </div>
-    <div class="card custom-card">
-
+  <div class="card custom-card">
+    <div class="card-headers custom-header">
+        <div class="title"><strong>{{entry.title}}</strong></div>
+        <div class="posted">Posted by: {{user.user_name}}</div>
     </div>
-        
+    <div class="card-body custom-body">
+        <div class="info">{{entry.text}}</div>
+    </div>
+</div>
+<br>
+<div class="card custom-card">
+    <div class="card-headers custom-header"></div>
+    <div class="card-body custom-body">
+        <div class="info">
+
+          <form class="row g-3">
+            <div class="comment-section">
+                <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Leave a
+                        comment:</strong></label>
+                <textarea class="form-control" id="comment-text" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn button-custom"><strong>Submit</strong></button>
+    
+        </form>
+
+
+        </div>
+    </div>
+</div>
       
 
 
