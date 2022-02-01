@@ -1,7 +1,7 @@
 <div class="card custom-card">
     <div class="card-headers custom-header">
         <div class="title"><strong>{{entry.title}}</strong></div>
-        <div class="posted">Posted by: {{entry.user.user_name}}</div>
+        <div class="posted">Posted by: {{entry.user.user_name}} on {{format_date entry.date_created}}</div>
     </div>
     <div class="card-body custom-body">
         <div class="info">{{entry.text}}</div>
