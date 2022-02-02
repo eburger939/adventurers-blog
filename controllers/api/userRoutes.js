@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Users } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 router.post('/register', async (req, res) => {
@@ -11,8 +12,10 @@ router.post('/register', async (req, res) => {
       });
   
       req.session.save(() => {
+        req.session.user_id = userData.id;
         req.session.loggedIn = true;
-  
+        req.session.email = userData.email;
+        
         res.status(200).json(newUser);
       });
     } catch (err) {

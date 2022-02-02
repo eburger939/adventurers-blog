@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         const blogs = userBlogs.map((blog) => blog.get({ plain: true }));
         res.render('dashboard', {
           blogs,
-        //   loggedIn: req.session.loggedIn,
+          loggedIn: req.session.loggedIn,
         });
         // res.json(blogs)
       } catch (err) {
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     const newEntry = await Entries.create({
         title: req.body.title,
         text: req.body.text,
-        user_id: req.session.user_id,
+        user_id: 1
     });
     res.status(200).json(newEntry);
 } catch (err) {
@@ -34,16 +34,16 @@ router.post('/', async (req, res) => {
 }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id',  async (req, res) => {
     try {
         const updateEntry = await Entries.update({
             ...req.body,
-            user_id: req.session.user_id,
+            user_id: 1
         },
         {
         where: {
             id: req.params.id,
-            user_id: req.session.user_id,
+            user_id: 1
         }
         });
         if(!updateEntry) {
@@ -61,7 +61,7 @@ router.delete('/:id', async (req, res) =>{
         const oldEntry = await Entries.destroy({
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id,
+                user_id: 1
             }
         });
         if (!oldEntry) {
