@@ -28,6 +28,11 @@ body {
     margin-top: 3rem;
 }
 
+.custom-card2 {
+    border: solid #1c1c20 6px;
+    margin-top: 1rem;
+}
+
 .custom-jumbo {
     background-color: #1c1c20;
 }
@@ -40,6 +45,14 @@ body {
 }
 
 .custom-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #1c1c20 2px;
+    padding: 10px;
+    background-color: #1c1c20;
+    color: rgb(167, 167, 224);
+}
+.custom-header3 {
     display: flex;
     justify-content: space-between;
     border-bottom: solid #1c1c20 2px;
@@ -85,8 +98,11 @@ body {
 .custom-body{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+}
 
-
+.custom-body3{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 .card-container {
     margin-top: 4rem;
@@ -173,4 +189,32 @@ a {
 
 .custom-body2 {
     background-color: lightgray;
+}
+
+.personal-blog-entries {
+    color: white;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.post-new-blog {
+    color: white;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.new-blog-title {
+    color: #1c1c20;
+    font-size: 1.5rem;
+    /* color: rgb(167, 167, 224); */
+    /* width: 100%; */
+    
+}
+
+.custom-body4 {
+    background-color: rgb(167, 167, 224);
+}
+
+#comment-text {
+    border: black solid 3px;
 }

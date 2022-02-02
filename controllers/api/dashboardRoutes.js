@@ -1,6 +1,26 @@
 const router = require('express').Router();
-const { Entries } = require('../../models')
+const { Entries, Users } = require('../../models')
 const withAuth = require('../../utils/auth')
+
+
+router.get('/', async (req, res) => {
+    try {
+        const userBlogs = await Entries.findAll({
+        where: {
+            // user_id: req.session.user_id,
+            user_id: 1,
+          },
+        })
+        const blogs = userBlogs.map((blog) => blog.get({ plain: true }));
+        // res.render('dashboard', {
+        //   blogs,
+        //   loggedIn: req.session.loggedIn,
+        // });
+        res.json(blogs)
+      } catch (err) {
+        res.status(500).json(err);
+      }
+});
 
 router.post('/', async (req, res) => {
     try{

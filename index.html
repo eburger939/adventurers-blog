@@ -13,45 +13,62 @@
 
 <body>
 
-  <div class="card custom-card">
-    <div class="card-headers custom-header">
-        <div class="title"><strong>{{entry.title}}</strong></div>
-        <div class="posted">Posted by: {{user.user_name}}</div>
-    </div>
-    <div class="card-body custom-body">
-        <div class="info">{{entry.text}}</div>
-    </div>
-    {{#if comment}}
-    {{#each }}
-    <div class="card-headers custom-header2">
-        <div class="title2"><strong>Comments:</strong></div>
-        <div class="posted">Posted by: {{user.user_name}}</div>
-    </div>
-    <div class="card-body custom-body2">
-        <div class="info2">{{entry.text}}</div>
-    </div>
-</div>
-<br>
-<div class="card custom-card">
-    <div class="card-headers custom-header"></div>
-    <div class="card-body custom-body">
-        <div class="info">
-
-          <form class="row g-3">
-            <div class="comment-section">
-                <label for="exampleFormControlTextarea1" class="form-label comm-label"><strong>Leave a
-                        comment:</strong></label>
-                <textarea class="form-control" id="comment-text" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn button-custom"><strong>Submit</strong></button>
-    
-        </form>
-
-
+<div class="container-fluid justify-content-center">
+    <div class="row">
+        <div class="col-8">
+<h3 class="personal-blog-entries">My Blog Entries</h3>
+    <div class="card custom-card2" id={{entry.id}}>
+        <div class="card-headers custom-header3">
+             <div class="title"><strong>{{entry.title}}</strong></div>
+             <div class="posted">Posted by: </div>
+         </div>
+         <div class="card-body custom-body3">
+             <div class="info">{{entry.text}}</div>
+         </div>
+         </div>
+         <div class="card custom-card2" id={{entry.id}}>
+            <div class="card-headers custom-header3">
+                 <div class="title"><strong>{{entry.title}}</strong></div>
+                 <div class="posted">Posted by: </div>
+             </div>
+             <div class="card-body custom-body3">
+                 <div class="info">{{entry.text}}</div>
+             </div>
+             </div>
         </div>
-    </div>
-</div>
-      
+            <div class="col-4">
+                <h3 class="post-new-blog">Post New Blog</h3>
+                <div class="card custom-card2" id={{entry.id}}>
+                    
+                    <div class="card-headers custom-header3">
+                            <br>
+                     </div>
+                     <div class="card-body custom-body4">
+                        <form class="create-new-blog">
+
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1"
+                                    class="form-label new-blog-title"><strong>Blog Title</strong></label>
+                                <input type="username" class="form-control custom-control" id="new-username"
+                                    aria-describedby="emailHelp" row="3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label custom-form-email"><strong>Text</strong></label>
+                                        <textarea class="form-control" id="comment-text" rows="3"></textarea>
+                                        <br>
+                                        <button class="btn button-custom"><strong>Submit</strong></button>
+
+                                </div>
+                            </div>
+                  
+                        </form>
+                     </div>
+                     </div>
+
+                      
+
+            </div>
+        </div>
 
 
 
