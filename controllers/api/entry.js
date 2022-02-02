@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Entries, Users, Comment } = require('../../models')
 const withAuth = require('../../utils/auth')
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
    const entryData = await Entries.findOne({
     include: [
@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
     //  res.json(entry)
     res.render('comment',
        {entry,
-        // loggedIn: req.session.loggedIn,
+        loggedIn: req.session.loggedIn,
       });
    } catch (err) {
      res.status(500).json(err);
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
  })
 
 
- router.post('/comment', async (req, res) => {
+ router.post('/comment', withAuth, async (req, res) => {
    try {
      const newComment = await Comment.create({
           comment_text: req.body.comment_text,

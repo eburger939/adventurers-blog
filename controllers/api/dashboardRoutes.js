@@ -3,11 +3,11 @@ const { Entries, Users } = require('../../models')
 const withAuth = require('../../utils/auth')
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const userBlogs = await Entries.findAll({
             where:{
-                user_id: 1
+                user_id: req.session.user_id,
             },
         })
         const blogs = userBlogs.map((blog) => blog.get({ plain: true }));
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     const newEntry = await Entries.create({
         title: req.body.title,
         text: req.body.text,
-        user_id: 1
+        user_id: req.session.user_id,
     });
     res.status(200).json(newEntry);
 } catch (err) {
@@ -61,7 +61,6 @@ router.delete('/:id', async (req, res) =>{
         const oldEntry = await Entries.destroy({
             where: {
                 id: req.params.id,
-                user_id: 1
             }
         });
         if (!oldEntry) {

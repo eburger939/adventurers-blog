@@ -3,6 +3,7 @@ document.querySelectorAll('.deleteBtn').forEach(function(el){
     el.addEventListener('click', async function() {
   
     if ( this.id ) {
+      console.log(this.id)
       const response = await fetch(`/api/dash/${this.id}`, {
         method: 'DELETE',
       });
