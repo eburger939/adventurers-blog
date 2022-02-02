@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Entries, Users } = require('../../models')
+const { Entries, Users, Comment } = require('../../models')
 // const withAuth = require('../../utils/auth')
 
 router.get('/:id', async (req, res) => {
@@ -25,8 +25,16 @@ router.get('/:id', async (req, res) => {
  })
 
 
- router.post('/', async (req, res) => {
-   
- })
+ router.post('/comment', async (req, res) => {
+   try {
+     const newComment = await Comment.create({
+          comment_text: req.body.comment_text,
+          entry_id: req.body.entry_id,
+     });
+     res.status(200).json(newComment)
+   } catch (err) {
+     res.status(400).json(err)
+   }
+ });
 
 module.exports =  router;
