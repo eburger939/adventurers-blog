@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     );
     // res.json(entries)
     res.render('homepage', {entries, loggedIn: req.session.loggedIn})
-    console.log(entries)
+    // console.log(entries)
 });
 
 // router.get('/entry/:id', async (req, res) => {

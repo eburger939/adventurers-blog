@@ -218,3 +218,7 @@ a {
 #comment-text {
     border: black solid 3px;
 }
+
+.cust-dash {
+    border: none
+}
