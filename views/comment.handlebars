@@ -6,6 +6,20 @@
     <div class="card-body custom-body">
         <div class="info">{{entry.text}}</div>
     </div>
+
+    {{#if entry.comments}}
+    {{#each entry.comments as |comment| }}
+    <div class="card-headers custom-header2">
+        <div class="title2"><strong>Comment</strong></div>
+        <div class="posted">Posted by: {{comment.user_name}} on {{format_date comment.date_created}}</div>
+    </div>
+        <div class="card-body custom-body2">
+        <div class="info2">{{comment.comment_text}}</div>
+    </div>
+    {{/each}}
+    {{/if}}
+
+
 </div>
 <br>
 <div class="card custom-card">

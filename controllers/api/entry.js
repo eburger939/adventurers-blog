@@ -10,12 +10,14 @@ router.get('/:id', async (req, res) => {
           model: Users,
           attributes: ['user_name'],
       },
+      {model: Comment},
   ],
     where: {
        id: req.params.id,
      },
     });
      const entry = entryData.get({ plain: true });
+    //  res.json(entry)
     res.render('comment',
        {entry,
         loggedIn: req.session.loggedIn,});
