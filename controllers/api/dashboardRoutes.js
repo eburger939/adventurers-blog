@@ -3,17 +3,17 @@ const { Entries, Users } = require('../../models')
 const withAuth = require('../../utils/auth')
 
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userBlogs = await Entries.findAll({
-        where: {
-            user_id: req.session.user_id,
-          },
+            where:{
+                user_id: 1
+            },
         })
         const blogs = userBlogs.map((blog) => blog.get({ plain: true }));
         res.render('dashboard', {
           blogs,
-          loggedIn: req.session.loggedIn,
+        //   loggedIn: req.session.loggedIn,
         });
         // res.json(blogs)
       } catch (err) {
@@ -24,7 +24,8 @@ router.get('/', withAuth, async (req, res) => {
 router.post('/', async (req, res) => {
     try{
     const newEntry = await Entries.create({
-        ...req.body,
+        title: req.body.title,
+        text: req.body.text,
         user_id: req.session.user_id,
     });
     res.status(200).json(newEntry);
@@ -33,7 +34,7 @@ router.post('/', async (req, res) => {
 }
 })
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const updateEntry = await Entries.update({
             ...req.body,
@@ -60,7 +61,7 @@ router.delete('/:id', async (req, res) =>{
         const oldEntry = await Entries.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
+                // user_id: req.session.user_id,
             }
         });
         if (!oldEntry) {

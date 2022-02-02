@@ -3,10 +3,10 @@
         <div class="col-8">
 <h3 class="personal-blog-entries">My Blog Entries</h3>
 {{#each blogs as |blog|}}
-    <div class="card custom-card2" >
+    <div class="card custom-card2">
         <div class="card-headers custom-header3">
              <div class="title"><strong>{{blog.title}}</strong></div>
-             <div class="posted">Posted by: </div>
+             <div><button class="deleteBtn" id="{{blog.id}}">Delete</button></div>
          </div>
          <div class="card-body custom-body3">
              <div class="info">{{blog.text}}</div>
@@ -17,7 +17,7 @@
         </div>
             <div class="col-4">
                 <h3 class="post-new-blog">Post New Blog</h3>
-                <div class="card custom-card2" id={{entry.id}}>
+                <div class="card custom-card2">
                     
                     <div class="card-headers custom-header3">
                             <br>
@@ -38,7 +38,7 @@
                                         <button class="btn button-custom"><strong>Submit</strong></button>
 
                                 </div>
-                            </div>
+                        
                   
                         </form>
                      </div>
@@ -48,3 +48,6 @@
 
             </div>
         </div>
+
+ <script src="/js/newEntry.js"></script>
+  <script src="/js/deleteEntry.js"></script>

@@ -44,6 +44,12 @@ body {
     text-decoration: none;
 }
 
+.deleteBtn{
+    background-color: #1c1c20;
+    color: rgb(167, 167, 224);
+    border: none;
+}
+
 .custom-header {
     display: flex;
     justify-content: space-between;
