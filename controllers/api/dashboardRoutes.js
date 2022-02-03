@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { text } = require('express');
 const { Entries, Users } = require('../../models')
 const withAuth = require('../../utils/auth')
 
@@ -37,19 +38,16 @@ router.post('/', async (req, res) => {
 router.put('/:id',  async (req, res) => {
     try {
         const updateEntry = await Entries.update({
-            ...req.body,
-            user_id: 1
+            title: req.body.title,
+            text: req.body.text,
+            user_id: req.session.user_id,
         },
         {
         where: {
             id: req.params.id,
-            user_id: 1
         }
         });
-        if(!updateEntry) {
-            res.status(404).json({ message: 'No entry found'})
-            return;
-        }
+        // res.redirect('/api/dash')
         res.status(200).json(updateEntry);
     } catch(err) {
         res.status(500).json(err)
@@ -67,10 +65,36 @@ router.delete('/:id', async (req, res) =>{
             res.status(404).json({ message: 'Entry not found'});
             return;
         }
+   
         res.status(200).json(oldEntry)
     } catch (err) {
         res.status(500).json(err);
     }
 })
+
+
+router.get('/:id', withAuth, async (req, res) => {
+    try {
+     const entryData = await Entries.findOne({
+      include: [
+        {
+            model: Users,
+            attributes: ['user_name'],
+        },
+    ],
+      where: {
+         id: req.params.id,
+       },
+      });
+       const edit = entryData.get({ plain: true });
+      //  res.json(entry)
+      res.render('edit',
+         {edit,
+          loggedIn: req.session.loggedIn,
+        });
+     } catch (err) {
+       res.status(500).json(err);
+     }
+   })
 
 module.exports = router;

@@ -13,9 +13,8 @@ router.post('/register', async (req, res) => {
       });
   
       req.session.save(() => {
-        req.session.user_id = userData.id;
         req.session.loggedIn = true;
-        req.session.email = userData.email;
+
         
         res.status(200).json(newUser);
       });

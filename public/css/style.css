@@ -50,6 +50,13 @@ body {
     border: none;
 }
 
+.editBtn {
+    background-color: #1c1c20;
+    color: rgb(167, 167, 224);
+    border: none;
+    margin-left: 25px;
+}
+
 .custom-header {
     display: flex;
     justify-content: space-between;
@@ -223,6 +230,14 @@ a {
 
 #comment-text {
     border: black solid 3px;
+}
+
+#new-title {
+    border: black solid 3px
+}
+
+#new-text {
+    border: black solid 3px
 }
 
 .cust-dash {
