@@ -6,6 +6,9 @@ document.querySelectorAll('.submit-edit').forEach(function(el){
       const title = document.querySelector('#new-title').value.trim();
       const text = document.querySelector('#new-text').value.trim();
 
+      if (!title || !text) {
+        alert('Please update both the title and the text')
+      }  
   
     if ( this.id && title && text) {
       const response = await fetch(`/api/dash/${this.id}`, {

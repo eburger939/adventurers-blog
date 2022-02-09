@@ -11,14 +11,20 @@ const newEntry = async (event) => {
     console.log(text)
 
     console.log(user_id)
-        
+      
+    if (!title || !text) {
+        alert('Please include both a blog title and text')
+      }   
 
     if ( title && text ) {
+
+
       const response = await fetch('/api/dash', {
         method: 'POST',
         body: JSON.stringify({ title, text }),
         headers: { 'Content-Type': 'application/json' },
       });
+
   
       if (response.ok) {
         document.location.reload();
