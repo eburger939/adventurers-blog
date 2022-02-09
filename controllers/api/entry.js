@@ -18,6 +18,7 @@ router.get('/:id', withAuth, async (req, res) => {
     });
      const entry = entryData.get({ plain: true });
     //  res.json(entry)
+    console.log(entry);
     res.render('comment',
        {entry,
         loggedIn: req.session.loggedIn,

@@ -8,13 +8,13 @@
     </div>
 
     {{#if entry.comments}}
-    {{#each entry.comments as |comment| }}
+    {{#each entry.comments}}
     <div class="card-headers custom-header2">
         <div class="title2"><strong>Comment</strong></div>
-        <div class="posted">Posted by: {{entry.user.user_name}} on {{format_date comment.date_created}}</div>
+        <div class="posted">Posted by: {{entry.user.user_name}} on {{format_date entry.comments.date_created}}</div>
     </div>
         <div class="card-body custom-body2">
-        <div class="info2">{{comment.comment_text}}</div>
+        <div class="info2">{{entry.comments.comment_text}}</div>
     </div>
     {{/each}}
     {{/if}}
