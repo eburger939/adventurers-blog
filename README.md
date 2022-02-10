@@ -1,4 +1,4 @@
-# Homework 14 - Tech Blog
+# Homework 14 - Adventurer's Blog
 * Due on 1/26/2022
 
 
@@ -7,9 +7,9 @@
 
 
 ## ScreenShots
-![Preview](images/TBHP.png)
-![Preview](images/TBlogin.png)
-![Preview](images/TBreg.png)
+![Preview](images/advblog1.png)
+![Preview](images/adv-blog2.png)
+
 
 
 ## Link to deployed application:
