@@ -16,6 +16,6 @@
 * https://adv-blog.herokuapp.com/
 
 ## Link to repository
-* https://github.com/eburger939/tech-blog
+* https://github.com/eburger939/adventurers-blog
 
 
